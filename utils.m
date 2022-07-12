@@ -6,7 +6,7 @@ classdef utils
                     fprintf("x"+enum(i)+" = "+round(solution(i), 5)+"\n");
                 end
             else
-                disp(solution);
+                fprintf("There is not solution\n");
             end
         end
     end

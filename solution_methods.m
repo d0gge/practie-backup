@@ -186,6 +186,15 @@ classdef solution_methods
                 end
             end
 
+            for row = 1:row_size
+                if matrix(row, :) == zeros(1, col_size)
+                    if rhs(row) ~= 0
+                        solution_set = [];
+                        return;
+                    end
+                end
+            end
+
             if matrix(row_size, row_size) == 0
                 [matrix, enum] = self...
                     .selectAnotherColumn(matrix, enum, row_size);
