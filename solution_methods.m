@@ -152,8 +152,6 @@ classdef solution_methods
             solution_set = zeros(col_size, 1);
 
             % checking if there is zero row
-            disp("Removing zero rows");
-            disp(matrix);
             for row = 1:row_size
                 if row > row_size
                     break;
@@ -164,10 +162,6 @@ classdef solution_methods
                     row_size = row_size - 1;
                 end
             end
-            disp("HELLO MAN IM HERE");
-            disp(matrix);
-            disp(rhs);
-            disp("HELLO MAN IM HERE");
 
             for col = 1:col_size
                 for row = (col + 1):row_size
@@ -192,12 +186,10 @@ classdef solution_methods
                 end
             end
 
-            disp(matrix);
             if matrix(row_size, row_size) == 0
                 [matrix, enum] = self...
                     .selectAnotherColumn(matrix, enum, row_size);
             end
-            disp(matrix);
 
             solution_set(row_size) =...
                 rhs(row_size)/matrix(row_size, row_size);
