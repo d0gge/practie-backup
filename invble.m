@@ -7,4 +7,4 @@ fprintf("Solving linear equations " + ...
     "system using invertible matrix.\n\n");
 [solution_set, enum] = methods.SolveInvertible(matrix, rhs);
 fprintf("Solution set:\n");
-utils.PrintSolution(solution_set,  enum);
+utils.PrintSolution(solution_set, enum);
